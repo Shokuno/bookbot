@@ -1,6 +1,7 @@
 from stats import get_num_words
 from stats import character_count
 from stats import character_report
+import sys
 
 def get_book_text(filepath):
     with open(filepath) as f:
@@ -8,7 +9,12 @@ def get_book_text(filepath):
         return  filecontents
 
 def main():
-    book_filepath = "books/frankenstein.txt"
+    #exits program if arguments are incorrect
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    
+    book_filepath = sys.argv[1]
 
     frankenstein_text = get_book_text(book_filepath)
     

@@ -19,8 +19,6 @@ def character_count(text):
     
     return char_dictionary
 
-
-
 def character_report(char_dictionary):
     def sort_on(items):
         return items["num"]                                                   
